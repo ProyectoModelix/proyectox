@@ -3,58 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OPTIMA - Planificación empresarial inteligente. Integramos datos de producción, ventas y finanzas para generar pronósticos precisos y optimizar recursos.">
+    <meta name="description" content="OPTIMA - Transformamos problemas complejos en decisiones óptimas mediante modelos científicos, optimización matemática y software a medida.">
 
-    <title>OPTIMA | Planificación Empresarial Inteligente</title>
+    <title>OPTIMA | Optimización matemática y decisiones óptimas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="bg-grid"></div>
-    <div class="particles">
-        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 35%; animation-delay: 4s;"></div>
-        <div class="particle" style="left: 50%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 65%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 80%; animation-delay: 5s;"></div>
-        <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
-    </div>
 
+    <!-- ================= NAV ================= -->
     <nav class="navbar">
-        <a href="#" class="logo">OPTIMA</a>
+        <a href="#inicio" class="logo">OPTIMA<span class="logo-dot"></span></a>
         <ul class="nav-links">
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#proceso">Proceso</a></li>
-            <li><a href="#industrias">Industrias</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#soluciones" data-i18n="nav.solutions">Soluciones</a></li>
+            <li><a href="#implementacion" data-i18n="nav.delivery">Implementación</a></li>
+            <li><a href="#tecnologia" data-i18n="nav.technology">Tecnología</a></li>
+            <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+            <li><a href="#metodologia" data-i18n="nav.approach">Metodología</a></li>
+            <li><a href="#demo" data-i18n="nav.demo">Demo</a></li>
+            <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
         </ul>
-        <!-- <button class="nav-cta">Solicitar Demo</button> -->
-        <button class="mobile-menu-btn" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="nav-right">
+            <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+                <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
+    <!-- ================= 1. INICIO (hero) ================= -->
     <div class="hero-scroll-container" id="inicio">
         <section class="hero">
             <canvas class="hero-canvas" id="heroCanvas"></canvas>
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span>Plataforma de Planificación Inteligente</span>
-                </div>
-                <h1>Decisiones más <span class="highlight typewriter" id="typewriterText"></span> para tu negocio</h1>
-                <p class="hero-description">Integramos datos de producción, ventas y finanzas para generar pronósticos precisos y simulaciones que optimizan cada recurso de tu organización.</p>
+                <h1 data-i18n="hero.title">Transformamos problemas complejos en <em>decisiones óptimas</em></h1>
+                <p class="hero-description" data-i18n="hero.p1">Somos un equipo interdisciplinario de matemáticos, físicos y desarrolladores de software que resuelve problemas reales de la industria mediante modelos científicos, optimización matemática y soluciones tecnológicas a medida.</p>
+                <p class="hero-description hero-description--sub" data-i18n="hero.p2">Diseñamos nuestros modelos desde cero, considerando las restricciones reales de cada operación y validando sus resultados mediante criterios rigurosos y las necesidades de quienes toman las decisiones.</p>
                 <div class="hero-buttons">
-                    <button class="btn-primary">Comenzar Ahora</button>
-                    <button class="btn-secondary">Ver Demostración</button>
+                    <a href="#contacto" class="btn-primary" data-i18n="cta.contact">Contactanos</a>
+                    <a href="#demo" class="btn-secondary" data-i18n="cta.demo">Ejecutar demo</a>
                 </div>
             </div>
 
@@ -65,252 +63,307 @@
         </section>
     </div>
 
-    <section class="services" id="servicios" data-parallax="0.2">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">Servicios</span>
-            <h2>Soluciones que transforman datos en decisiones</h2>
-            <p>Herramientas avanzadas diseñadas para potenciar cada área de tu operación</p>
-        </div>
+    <main class="paper">
 
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                    </svg>
+        <!-- ================= 2. SOLUCIONES ================= -->
+        <section class="section solutions" id="soluciones">
+            <header class="sec-head animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">01</span><span data-i18n="sol.tag">Soluciones</span></div>
+            </header>
+
+            <article class="solution-block">
+                <div class="solution-intro animate-on-scroll">
+                    <span class="solution-kicker">A</span>
+                    <h2 data-i18n="sol.a.title">Planificación y optimización SIOP</h2>
+                    <p data-i18n="sol.a.text">Optimizamos la planificación de la demanda, producción e inventarios para mejorar el cumplimiento de pedidos, utilizar eficientemente los recursos disponibles y reducir costos operativos.</p>
                 </div>
-                <h3>Análisis Predictivo</h3>
-                <p>Modelos de machine learning que anticipan tendencias de demanda, identifican patrones ocultos y generan pronósticos con alta precisión.</p>
+                <ol class="solution-list">
+                    <li class="animate-on-scroll"><span class="item-n">A.1</span><div><h3 data-i18n="sol.a.1.t">Pronóstico de demanda</h3><p data-i18n="sol.a.1.d">Mejoramos la precisión de las estimaciones de demanda y reducimos sesgos para facilitar decisiones de planificación más confiables.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">A.2</span><div><h3 data-i18n="sol.a.2.t">Optimización del plan de producción</h3><p data-i18n="sol.a.2.d">Diseñamos planes de producción que satisfacen la demanda en tiempo y cantidad, respetando las capacidades y restricciones operativas.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">A.3</span><div><h3 data-i18n="sol.a.3.t">Cumplimiento de demanda</h3><p data-i18n="sol.a.3.d">Mejoramos la capacidad de entregar pedidos completos y dentro de los plazos comprometidos.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">A.4</span><div><h3 data-i18n="sol.a.4.t">Optimización de inventarios</h3><p data-i18n="sol.a.4.d">Determinamos niveles de inventario adecuados para reducir costos, prevenir faltantes y garantizar disponibilidad.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">A.5</span><div><h3 data-i18n="sol.a.5.t">Simulación de escenarios</h3><p data-i18n="sol.a.5.d">Evaluamos cambios de demanda, capacidad, producción y abastecimiento antes de comprometer recursos.</p></div></li>
+                </ol>
+            </article>
+
+            <article class="solution-block">
+                <div class="solution-intro animate-on-scroll">
+                    <span class="solution-kicker">B</span>
+                    <h2 data-i18n="sol.b.title">Optimización logística y de rutas</h2>
+                    <p data-i18n="sol.b.text">Diseñamos soluciones para mejorar la distribución de productos, optimizar el uso de flotas y reducir costos de transporte, considerando restricciones reales de capacidad, tiempos y niveles de servicio.</p>
+                </div>
+                <ol class="solution-list">
+                    <li class="animate-on-scroll"><span class="item-n">B.1</span><div><h3 data-i18n="sol.b.1.t">Optimización de rutas</h3><p data-i18n="sol.b.1.d">Diseñamos rutas que minimizan distancias, tiempos y costos, respetando ventanas de entrega y restricciones operativas.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">B.2</span><div><h3 data-i18n="sol.b.2.t">Planificación de capacidad de flotas</h3><p data-i18n="sol.b.2.d">Asignamos vehículos, cargas y rutas para adaptar la capacidad disponible a la demanda.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">B.3</span><div><h3 data-i18n="sol.b.3.t">Programación de entregas</h3><p data-i18n="sol.b.3.d">Organizamos entregas para cumplir ventanas horarias y evitar la sobrecarga de las rutas diarias.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">B.4</span><div><h3 data-i18n="sol.b.4.t">Optimización de costos de transporte</h3><p data-i18n="sol.b.4.d">Reducimos el costo por entrega sin comprometer los niveles de servicio.</p></div></li>
+                    <li class="animate-on-scroll"><span class="item-n">B.5</span><div><h3 data-i18n="sol.b.5.t">Simulación de escenarios</h3><p data-i18n="sol.b.5.d">Evaluamos picos de demanda, disponibilidad de vehículos, interrupciones viales y cambios en las ventanas de entrega.</p></div></li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- ================= 3. MODALIDADES ================= -->
+        <section class="section delivery" id="implementacion">
+            <header class="sec-head sec-head--split animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">02</span><span data-i18n="del.tag">Modalidades de implementación</span></div>
+                <h2 data-i18n="del.title">Soluciones adaptadas a <em>tu operación</em></h2>
+                <p data-i18n="del.text">Adaptamos la implementación a la infraestructura, los procesos y las necesidades de cada organización.</p>
+            </header>
+
+            <div class="delivery-grid">
+                <div class="delivery-card animate-on-scroll">
+                    <svg class="delivery-icon" viewBox="0 0 48 48" fill="none" stroke-width="1.5"><path d="M14 34h21a8 8 0 0 0 1.4-15.9A11 11 0 0 0 15.3 20 7 7 0 0 0 14 34Z"/><path d="M24 26v10M20 30l4-4 4 4"/></svg>
+                    <h3 data-i18n="del.1.t">Plataforma cloud</h3>
+                    <p data-i18n="del.1.d">Infraestructura escalable con acceso remoto a datos, análisis y resultados.</p>
+                </div>
+                <div class="delivery-card animate-on-scroll">
+                    <svg class="delivery-icon" viewBox="0 0 48 48" fill="none" stroke-width="1.5"><rect x="7" y="10" width="34" height="23" rx="2"/><path d="M18 40h12M24 33v7M7 27h34"/></svg>
+                    <h3 data-i18n="del.2.t">Aplicación independiente</h3>
+                    <p data-i18n="del.2.d">Software autónomo que puede ejecutarse en la infraestructura del cliente.</p>
+                </div>
+                <div class="delivery-card animate-on-scroll">
+                    <svg class="delivery-icon" viewBox="0 0 48 48" fill="none" stroke-width="1.5"><rect x="6" y="9" width="14" height="11" rx="1.5"/><rect x="28" y="28" width="14" height="11" rx="1.5"/><path d="M20 14.5h8a4 4 0 0 1 4 4V28M28 33.5h-8a4 4 0 0 1-4-4V20"/></svg>
+                    <h3 data-i18n="del.3.t">Integración con sistemas existentes</h3>
+                    <p data-i18n="del.3.d">Adaptamos nuestras soluciones a los sistemas y flujos de trabajo existentes.</p>
+                </div>
+                <div class="delivery-card animate-on-scroll">
+                    <svg class="delivery-icon" viewBox="0 0 48 48" fill="none" stroke-width="1.5"><circle cx="24" cy="24" r="6"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></svg>
+                    <h3 data-i18n="del.4.t">Servicio gestionado</h3>
+                    <p data-i18n="del.4.d">Ejecutamos, monitoreamos y mantenemos la solución como un servicio externo.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                    </svg>
+        <!-- ================= 4. TECNOLOGÍA ================= -->
+        <section class="section technology" id="tecnologia">
+            <header class="sec-head sec-head--split animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">03</span><span data-i18n="tech.tag">Tecnología</span></div>
+                <h2 data-i18n="tech.title">Tecnología y <em>optimización</em></h2>
+                <p data-i18n="tech.text">Combinamos herramientas matemáticas, simulación y desarrollo de software para construir soluciones adaptadas a problemas industriales reales.</p>
+            </header>
+
+            <div class="tech-grid">
+                <div class="tech-card animate-on-scroll">
+                    <div class="tech-visual" data-viz="optimization"></div>
+                    <div class="tech-body">
+                        <h3 data-i18n="tech.1.t">Optimización matemática</h3>
+                        <p data-i18n="tech.1.d">Formulamos problemas mediante modelos matemáticos que incorporan objetivos, restricciones y capacidades operativas. Utilizamos algoritmos de optimización para encontrar soluciones factibles y determinar la mejor solución posible según los criterios definidos.</p>
+                    </div>
                 </div>
-                <h3>Simulación de Escenarios</h3>
-                <p>Evalúa múltiples escenarios antes de tomar decisiones. Simula cambios en demanda, costos y capacidad para minimizar riesgos.</p>
-            </div>
-
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-                    </svg>
-                </div>
-                <h3>Optimización de Supply Chain</h3>
-                <p>Algoritmos que balancean inventario, producción y distribución para maximizar eficiencia y reducir costos operativos.</p>
-            </div>
-
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-                    </svg>
-                </div>
-                <h3>Soluciones en la Nube</h3>
-                <p>Infraestructura escalable que crece con tu negocio. Accede a tus datos y análisis desde cualquier lugar, en tiempo real.</p>
-            </div>
-
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                    </svg>
-                </div>
-                <h3>Optimización Agronómica con GIS</h3>
-                <p>Inteligencia geoespacial aplicada a agricultura de precisión para mejorar productividad por hectárea y eficiencia operativa.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="process" id="proceso" data-parallax="0.2">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">Proceso</span>
-            <h2>Cómo transformamos tu planificación</h2>
-            <p>Un enfoque estructurado para resultados medibles</p>
-        </div>
-
-        <div class="process-timeline">
-            <div class="process-step animate-on-scroll">
-                <div class="step-content">
-                    <h3>Diagnóstico</h3>
-                    <p>Analizamos datos históricos y evaluamos fortalezas, debilidades y objetivos del cliente para establecer el baseline del proyecto.</p>
-                </div>
-                <div class="step-number">01</div>
-                <div class="step-visual">
-                    <div class="step-icon-box">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                        </svg>
+                <div class="tech-card animate-on-scroll">
+                    <div class="tech-visual" data-viz="simulation"></div>
+                    <div class="tech-body">
+                        <h3 data-i18n="tech.2.t">Optimización basada en simulación</h3>
+                        <p data-i18n="tech.2.d">Aplicamos simulación y métodos de búsqueda para optimizar decisiones en sistemas complejos, especialmente cuando los modelos analíticos tradicionales no representan adecuadamente la operación.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="process-step animate-on-scroll">
-                <div class="step-content">
-                    <h3>Datos</h3>
-                    <p>Procesamos, limpiamos e integramos toda la información en un flujo de datos robusto y confiable.</p>
+        <!-- ================= 5. PROYECTOS ================= -->
+        <section class="section projects" id="proyectos">
+            <header class="sec-head animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">04</span><span data-i18n="proj.tag">Proyectos seleccionados</span></div>
+            </header>
+
+            <div class="project-list">
+                <article class="project animate-on-scroll">
+                    <div class="project-num">I</div>
+                    <div class="project-text">
+                        <h3 data-i18n="proj.1.t">Optimización agronómica con GIS</h3>
+                        <p data-i18n="proj.1.p1">Aplicamos inteligencia geoespacial y modelos de optimización a la agricultura de precisión, permitiendo tomar decisiones diferenciadas por zona de cultivo en lugar de utilizar parámetros uniformes para todo el campo.</p>
+                        <p data-i18n="proj.1.p2">Esto permite orientar mejor la asignación de recursos, identificar diferencias de productividad y mejorar la eficiencia de las decisiones agronómicas.</p>
+                    </div>
+                    <div class="project-visual" data-viz="gis"></div>
+                </article>
+                <article class="project animate-on-scroll">
+                    <div class="project-num">II</div>
+                    <div class="project-text">
+                        <h3 data-i18n="proj.2.t">Planificación detallada de producción</h3>
+                        <p data-i18n="proj.2.p1">Desarrollamos modelos de planificación de producción a largo plazo, incorporando inventarios, restricciones de capacidad y cumplimiento de demanda.</p>
+                        <p data-i18n="proj.2.p2">Transformamos planes mensuales en cronogramas diarios ejecutables, facilitando la coordinación de recursos y la implementación operativa de las decisiones.</p>
+                    </div>
+                    <div class="project-visual" data-viz="gantt"></div>
+                </article>
+                <article class="project animate-on-scroll">
+                    <div class="project-num">III</div>
+                    <div class="project-text">
+                        <h3 data-i18n="proj.3.t">Optimización de rutas</h3>
+                        <p data-i18n="proj.3.p1">Diseñamos modelos de optimización logística que consideran tiempos de viaje, costos de transporte, capacidades de flota y ventanas de entrega.</p>
+                        <p data-i18n="proj.3.p2">Estas soluciones permiten construir planes de distribución más eficientes y evaluar alternativas operativas bajo distintas restricciones.</p>
+                    </div>
+                    <div class="project-visual" data-viz="routes"></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= 6. METODOLOGÍA ================= -->
+        <section class="section approach" id="metodologia">
+            <header class="sec-head animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">05</span><span data-i18n="app.tag">Nuestra metodología</span></div>
+            </header>
+
+            <ol class="approach-steps">
+                <li class="approach-step animate-on-scroll">
+                    <span class="step-num">01</span>
+                    <h3 data-i18n="app.1.t">Diagnóstico</h3>
+                    <p data-i18n="app.1.d">Analizamos los datos históricos, los objetivos del cliente, las restricciones operativas y la viabilidad del proyecto para establecer una línea de base.</p>
+                </li>
+                <li class="approach-step animate-on-scroll">
+                    <span class="step-num">02</span>
+                    <h3 data-i18n="app.2.t">Datos</h3>
+                    <p data-i18n="app.2.d">Procesamos, limpiamos e integramos la información necesaria para construir un flujo de datos confiable. Identificamos y gestionamos problemas de calidad que podrían afectar los resultados de la optimización.</p>
+                </li>
+                <li class="approach-step animate-on-scroll">
+                    <span class="step-num">03</span>
+                    <h3 data-i18n="app.3.t">Modelo</h3>
+                    <p data-i18n="app.3.d">Desarrollamos un modelo matemático o de simulación adaptado a las características reales de la operación y sus objetivos.</p>
+                </li>
+                <li class="approach-step animate-on-scroll">
+                    <span class="step-num">04</span>
+                    <h3 data-i18n="app.4.t">Validación</h3>
+                    <p data-i18n="app.4.d">Comparamos los resultados del modelo con datos históricos, indicadores operativos y la línea de base para evaluar su efectividad.</p>
+                </li>
+                <li class="approach-step animate-on-scroll">
+                    <span class="step-num">05</span>
+                    <h3 data-i18n="app.5.t">Implementación</h3>
+                    <p data-i18n="app.5.d">Automatizamos el flujo completo, desde la extracción y transformación de datos hasta la generación de planes optimizados, reportes y resultados utilizables.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ================= 7. DEMO ================= -->
+        <section class="section demo" id="demo">
+            <header class="sec-head sec-head--split animate-on-scroll">
+                <div class="sec-label"><span class="sec-index">06</span><span data-i18n="demo.tag">Demo</span></div>
+                <h2 data-i18n="demo.title">Descubrí cómo funciona <em>nuestra optimización</em></h2>
+                <p data-i18n="demo.text">Explorá un ejemplo de planificación de producción: desde los datos operativos hasta un plan optimizado y sus indicadores principales.</p>
+            </header>
+
+            <div class="demo-steps animate-on-scroll">
+                <div class="demo-step is-active" data-step="1">
+                    <span class="demo-step-n">1</span>
+                    <h3 data-i18n="demo.1.t">Datos de entrada</h3>
+                    <p data-i18n="demo.1.d">Visualizá la información utilizada para construir el modelo, incluyendo demanda, inventarios, capacidad productiva y parámetros operativos.</p>
                 </div>
-                <div class="step-number">02</div>
-                <div class="step-visual">
-                    <div class="step-icon-box">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                        </svg>
+                <div class="demo-step" data-step="2">
+                    <span class="demo-step-n">2</span>
+                    <h3 data-i18n="demo.2.t">Ejecutar optimización</h3>
+                    <p data-i18n="demo.2.d">Nuestro modelo procesa la información y determina un plan de producción optimizado, considerando los objetivos y las restricciones definidas.</p>
+                </div>
+                <div class="demo-step" data-step="3">
+                    <span class="demo-step-n">3</span>
+                    <h3 data-i18n="demo.3.t">Resultados</h3>
+                    <p data-i18n="demo.3.d">Visualizá cómo se distribuye la producción, se utiliza la capacidad disponible y evoluciona el inventario durante el horizonte de planificación.</p>
+                </div>
+            </div>
+
+            <div class="demo-console animate-on-scroll" id="demoConsole">
+                <div class="console-bar">
+                    <span class="console-dots"><i></i><i></i><i></i></span>
+                    <span class="console-title">optima / production-plan.model</span>
+                    <span class="console-status" id="demoStatus"></span>
+                </div>
+                <div class="console-body">
+                    <div class="demo-input" id="demoInput"></div>
+                    <div class="demo-controls">
+                        <label class="demo-slider">
+                            <span id="demoSliderLabel"></span>
+                            <input type="range" id="demoScenario" min="80" max="115" step="5" value="100">
+                            <output id="demoScenarioOut">100%</output>
+                        </label>
+                        <button type="button" class="btn-primary btn-run" id="demoRun" data-i18n="cta.demo">Ejecutar demo</button>
+                    </div>
+                    <div class="demo-log" id="demoLog" aria-live="polite"></div>
+                    <div class="demo-results" id="demoResults">
+                        <div class="demo-kpis" id="demoKpis"></div>
+                        <div class="demo-chart" id="demoChart"></div>
+                        <div class="demo-legend" id="demoLegend"></div>
+                        <div class="demo-reading" id="demoReading"></div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="process-step animate-on-scroll">
-                <div class="step-content">
-                    <h3>Modelado</h3>
-                    <p>Construimos un modelo matemático que encuentra la solución óptima para tu operación.</p>
-                </div>
-                <div class="step-number">03</div>
-                <div class="step-visual">
-                    <div class="step-icon-box">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                        </svg>
-                    </div>
-                </div>
+        <!-- ================= 8. EXPERIENCIA ================= -->
+        <section class="section experience" id="experiencia">
+            <div class="experience-wrap">
+                <header class="sec-head animate-on-scroll">
+                    <div class="sec-label"><span class="sec-index">07</span><span data-i18n="exp.tag">Experiencia previa</span></div>
+                    <h2 data-i18n="exp.title">Experiencia en <em>distintos sectores</em></h2>
+                    <p data-i18n="exp.text">Nuestro equipo reúne experiencia profesional en proyectos tecnológicos, científicos y de análisis de datos vinculados con organizaciones de distintos sectores, incluyendo agricultura, finanzas, desarrollo internacional y servicios tecnológicos.</p>
+                </header>
+
+                <ul class="logo-grid animate-on-scroll">
+                    <li class="logo-cell"><img src="assets/img/logos/bayer.png" alt="Bayer" class="logo-img logo-bayer" loading="lazy"><span>Bayer</span></li>
+                    <li class="logo-cell"><img src="assets/img/logos/fao.jpg" alt="FAO" class="logo-img logo-fao" loading="lazy"><span>FAO</span></li>
+                    <li class="logo-cell"><img src="assets/img/logos/santander.jpg" alt="Santander" class="logo-img logo-santander" loading="lazy"><span>Santander</span></li>
+                    <li class="logo-cell"><img src="assets/img/logos/quiena.jpg" alt="Quiena Inversiones" class="logo-img logo-quiena" loading="lazy"><span>Quiena Inversiones</span></li>
+                </ul>
             </div>
+        </section>
+    </main>
 
-            <div class="process-step animate-on-scroll">
-                <div class="step-content">
-                    <h3>Validación</h3>
-                    <p>Comparamos los resultados del modelo contra el baseline y datos históricos para garantizar su efectividad.</p>
-                </div>
-                <div class="step-number">04</div>
-                <div class="step-visual">
-                    <div class="step-icon-box">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="process-step animate-on-scroll">
-                <div class="step-content">
-                    <h3>Implementación</h3>
-                    <p>Automatizamos un flujo continuo que va desde la extracción de datos hasta la entrega del plan optimizado.</p>
-                </div>
-                <div class="step-number">05</div>
-                <div class="step-visual">
-                    <div class="step-icon-box">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="industries" id="industrias" data-parallax="0.2">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">Industrias</span>
-            <h2>Soluciones adaptadas a tu sector</h2>
-            <p>Experiencia comprobada en múltiples verticales</p>
-        </div>
-
-        <div class="industries-grid">
-            <div class="industry-card animate-on-scroll">
-                <div class="industry-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-                    </svg>
-                </div>
-                <h4>Manufactura</h4>
-                <p>Planificación de producción</p>
-            </div>
-
-            <div class="industry-card animate-on-scroll">
-                <div class="industry-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                    </svg>
-                </div>
-                <h4>Forecast</h4>
-                <p>Planificación de demanda</p>
-            </div>
-
-            <div class="industry-card animate-on-scroll">
-                <div class="industry-icon">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                    </svg>
-                </div>
-                <h4>Agronegocios</h4>
-                <p>Agricultura de precisión y optimización productiva</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- ================= 9. CONTACTO ================= -->
     <section class="cta-section" id="contacto">
         <canvas class="cta-canvas" id="ctaCanvas"></canvas>
         <div class="cta-overlay"></div>
 
         <div class="cta-content">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Contacto</span>
-                <h2>Transforma tu planificación hoy</h2>
-                <p>Agenda una demostración personalizada y descubre cómo podemos optimizar tu operación</p>
+            <div class="cta-header animate-on-scroll">
+                <span class="cta-tag" data-i18n="contact.tag">Contacto</span>
+                <h2 data-i18n="contact.title">¿Tenés un problema complejo que resolver?</h2>
+                <p data-i18n="contact.text">Contanos cuáles son tus desafíos operativos. Podemos ayudarte a evaluar oportunidades de optimización y desarrollar una solución adaptada a tus necesidades.</p>
             </div>
 
-            <form class="contact-form animate-on-scroll">
+            <form class="contact-form animate-on-scroll" novalidate>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <label for="nombre" data-i18n="form.name">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" data-i18n-ph="form.name.ph" required>
                     </div>
                     <div class="form-group">
-                        <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" placeholder="Tu empresa">
+                        <label for="empresa" data-i18n="form.company">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Tu empresa" data-i18n-ph="form.company.ph">
                     </div>
                 </div>
                 <div class="form-group full-width">
-                    <label for="email">Email corporativo</label>
-                    <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+                    <label for="email" data-i18n="form.email">Email corporativo</label>
+                    <input type="email" id="email" name="email" placeholder="tu@empresa.com" data-i18n-ph="form.email.ph" required>
                 </div>
                 <div class="form-group full-width">
-                    <label for="mensaje">¿Cómo podemos ayudarte?</label>
-                    <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tus desafíos de planificación..."></textarea>
+                    <label for="mensaje" data-i18n="form.message">¿Cómo podemos ayudarte?</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Contanos sobre tus desafíos operativos..." data-i18n-ph="form.message.ph"></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Solicitar Demostración</button>
+                <button type="submit" class="submit-btn" data-i18n="cta.contact">Contactanos</button>
             </form>
         </div>
     </section>
 
-    <!-- ==========================================
-         Footer
-         ========================================== -->
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#" class="logo">OPTIMA</a>
+                <a href="#inicio" class="logo">OPTIMA<span class="logo-dot"></span></a>
+                <p data-i18n="footer.tagline">Transformamos problemas complejos en decisiones óptimas.</p>
             </div>
 
             <div class="footer-column">
-                <h4>Contacto</h4>
+                <h4 data-i18n="nav.contact">Contacto</h4>
                 <ul>
                     <li><a href="mailto:contacto@optima.com">contacto@optima.com</a></li>
                     <li><a href="tel:+15551234567">+1 (555) 123-4567</a></li>
                     <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 OPTIMA. Todos los derechos reservados.</p>
+            <p>&copy; 2026 OPTIMA. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
-    <!-- <button class="floating-cta" style="display:none;">Solicitar Demo</button> -->
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

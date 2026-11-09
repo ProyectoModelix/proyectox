@@ -519,9 +519,25 @@
             statusEl.dataset.state = state;
         }
 
+        const compactMQ = window.matchMedia('(max-width: 640px)');
+        const isCompact = () => compactMQ.matches;
+
         function renderInput() {
             const u = ui();
             const dem = demand();
+            if (isCompact()) {
+                let g = '<div class="data-grid-key"><span class="k k-d">' + u.demand + '</span><span class="k k-c">' + u.capacity + '</span></div><div class="data-grid">';
+                dem.forEach((d, i) => {
+                    g += '<div class="dg-cell"><span class="dg-m">' + u.months[i] + '</span><span class="dg-d">' + d + '</span><span class="dg-c">' + CAPACITY[i] + '</span></div>';
+                });
+                g += '</div>';
+                g += '<dl class="data-params"><div><dt>' + u.initInv + '</dt><dd>' + INV0 + ' ' + u.units + '</dd></div>' +
+                     '<div><dt>' + u.safety + '</dt><dd>' + SS + ' ' + u.units + '</dd></div></dl>';
+                inputEl.innerHTML = g;
+                sliderLabel.textContent = u.scenario;
+                sliderOut.textContent = slider.value + '%';
+                return;
+            }
             let html = '<div class="data-table-wrap"><table class="data-table"><thead><tr><th>' + u.month + '</th>';
             u.months.forEach(m => { html += '<th>' + m + '</th>'; });
             html += '</tr></thead><tbody><tr><th>' + u.demand + '</th>';
@@ -558,18 +574,23 @@
 
         function renderChart(r, animate) {
             const u = ui();
-            const W = 960, H = 372, padL = 48, padR = 16, padT = 52, padB = 36;
+            const compact = isCompact();
+            const W = compact ? 360 : 960;
+            const H = compact ? 440 : 372;
+            const padL = compact ? 46 : 48, padR = compact ? 4 : 16;
+            const padT = compact ? 46 : 52, padB = compact ? 28 : 36;
             const T = r.dem.length;
             const maxV = Math.ceil(Math.max.apply(null, r.dem.concat(r.prod, CAPACITY, r.inv)) * 1.12 / 100) * 100;
             const cw = (W - padL - padR) / T;
             const y = v => padT + (H - padT - padB) * (1 - v / maxV);
             const x = i => padL + cw * i + cw / 2;
 
-            const svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'chart' + (animate ? ' chart--animate' : ''), role: 'img', 'aria-label': u.production });
+            const svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'chart' + (compact ? ' chart--compact' : '') + (animate ? ' chart--animate' : ''), role: 'img', 'aria-label': u.production });
 
-            for (let v = 0; v <= maxV; v += maxV / 4) {
+            const ticks = compact ? 2 : 4;
+            for (let v = 0; v <= maxV; v += maxV / ticks) {
                 svgEl('line', { x1: padL, x2: W - padR, y1: y(v), y2: y(v), class: 'c-grid' }, svg);
-                const t = svgEl('text', { x: padL - 10, y: y(v) + 4, class: 'c-tick', 'text-anchor': 'end' }, svg);
+                const t = svgEl('text', { x: padL - (compact ? 6 : 10), y: y(v) + 4, class: 'c-tick', 'text-anchor': 'end' }, svg);
                 t.textContent = fmt(v);
             }
 
@@ -585,7 +606,8 @@
                 svgEl('rect', { x: x0, y: 8, width: x1 - x0, height: y(0) - 8, rx: 4, class: 'c-band-bg' }, g);
                 svgEl('line', { x1: x0, x2: x1, y1: 8, y2: 8, class: 'c-band-top' }, g);
                 const label = svgEl('text', { x: (x0 + x1) / 2, y: 28, 'text-anchor': 'middle', class: 'c-band-label' }, g);
-                label.textContent = (months >= 3 ? b.n + ' · ' + b.long : (months === 2 ? b.n + ' · ' + b.short : b.short));
+                if (compact) label.textContent = months >= 3 ? b.n + ' · ' + b.short : String(b.n);
+                else label.textContent = (months >= 3 ? b.n + ' · ' + b.long : (months === 2 ? b.n + ' · ' + b.short : b.short));
             });
 
             // Inventario (área)
@@ -597,25 +619,29 @@
 
             // Producción (barras) + capacidad
             r.prod.forEach((p, i) => {
-                const bw = cw * 0.52;
+                const bw = cw * (compact ? 0.62 : 0.52);
                 const g = svgEl('g', { class: 'c-bar-g', style: '--i:' + i }, svg);
                 const bar = svgEl('rect', { x: x(i) - bw / 2, y: y(p), width: bw, height: y(0) - y(p), rx: 2, class: 'c-bar' }, g);
                 const tt = svgEl('title', {}, bar);
                 tt.textContent = u.months[i] + ' · ' + u.production + ': ' + fmt(p) + ' · ' + u.capacity + ': ' + fmt(CAPACITY[i]);
                 svgEl('line', { x1: x(i) - cw * 0.38, x2: x(i) + cw * 0.38, y1: y(CAPACITY[i]), y2: y(CAPACITY[i]), class: 'c-cap' }, svg);
                 if (r.shortByMonth[i] > 0) {
+                    if (compact) {
+                        svgEl('circle', { cx: x(i), cy: y(p) - 8, r: 3.5, class: 'c-short c-short-g' }, svg);
+                    } else {
                     const sg = svgEl('g', { class: 'c-short-g' }, svg);
                     svgEl('circle', { cx: x(i), cy: y(p) - 10, r: 4, class: 'c-short' }, sg);
                     const st = svgEl('text', { x: x(i), y: y(p) + 18, 'text-anchor': 'middle', class: 'c-short-label' }, sg);
                     st.textContent = '−' + fmt(r.shortByMonth[i]);
+                    }
                 }
                 const ml = svgEl('text', { x: x(i), y: H - 12, class: 'c-tick', 'text-anchor': 'middle' }, svg);
-                ml.textContent = u.months[i];
+                ml.textContent = compact ? u.months[i].charAt(0) : u.months[i];
             });
 
             // Demanda (línea)
             const dl = svgEl('polyline', { points: r.dem.map((v, i) => x(i) + ',' + y(v)).join(' '), class: 'c-dem' }, svg);
-            r.dem.forEach((v, i) => svgEl('circle', { cx: x(i), cy: y(v), r: 3.5, class: 'c-dem-dot', style: '--i:' + i }, svg));
+            r.dem.forEach((v, i) => svgEl('circle', { cx: x(i), cy: y(v), r: compact ? 2.8 : 3.5, class: 'c-dem-dot', style: '--i:' + i }, svg));
 
             chartEl.innerHTML = '';
             chartEl.appendChild(svg);
@@ -699,6 +725,13 @@
                 renderLog(logEl.children.length, false);
             }
         });
+
+        const onBreakpoint = () => {
+            renderInput();
+            if (state === 'done' && result) renderChart(result, false);
+        };
+        if (compactMQ.addEventListener) compactMQ.addEventListener('change', onBreakpoint);
+        else compactMQ.addListener(onBreakpoint);
 
         renderInput();
         setStatus();

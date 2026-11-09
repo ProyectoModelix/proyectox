@@ -1107,6 +1107,23 @@ em { font-style: italic; }
 
 @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
+/* Gráfico compacto (móvil) */
+.chart--compact .c-tick { font-size: 13px; }
+.chart--compact .c-band-label { font-size: 13px; }
+.chart--compact .c-dem { stroke-width: 2.2; }
+
+/* Datos de entrada compactos (móvil) */
+.data-grid-key { display: flex; gap: 1.2rem; font-size: 0.8rem; color: var(--ink-2); margin-bottom: 0.7rem; }
+.data-grid-key .k { display: inline-flex; align-items: center; gap: 0.4rem; }
+.data-grid-key .k::before { content: ''; width: 8px; height: 8px; border-radius: 2px; }
+.data-grid-key .k-d::before { background: var(--signal); }
+.data-grid-key .k-c::before { background: var(--ink); }
+.data-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.dg-cell { display: flex; flex-direction: column; gap: 0.1rem; padding: 0.55rem 0.6rem; background: var(--paper); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.dg-m { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.dg-d { font-size: 0.88rem; color: var(--signal); }
+.dg-c { font-size: 0.88rem; color: var(--ink); }
+
 /* Etapas del plan */
 .c-band--build .c-band-bg { fill: var(--accent); fill-opacity: 0.07; }
 .c-band--build .c-band-top { stroke: var(--accent); stroke-width: 2; }
@@ -1600,8 +1617,10 @@ em { font-style: italic; }
 
     .demo-controls { flex-direction: column; align-items: stretch; }
     .console-title { visibility: hidden; }
-    .demo-chart { overflow-x: auto; }
-    .demo-chart svg { min-width: 640px; }
+    .console-body { padding: 1rem; }
+    .demo-reading { padding: 1.1rem 1rem; }
+    .reading-list p { font-size: 0.9rem; }
+    .kpi { padding: 0.9rem 1rem; }
     .demo-slider input[type="range"] { flex: 1; width: auto; }
     .kpi-value { font-size: 1.9rem; }
 

@@ -35,8 +35,8 @@
         const meta = {
             es: { title: document.title, desc: metaDesc ? metaDesc.content : '' },
             en: {
-                title: 'OPTIMA | Mathematical Optimization & Optimal Decisions',
-                desc: 'OPTIMA - Turning complex problems into optimal decisions through scientific modeling, mathematical optimization, and tailored software.'
+                title: 'Modelix Systems | Mathematical Optimization & Optimal Decisions',
+                desc: 'Modelix Systems - Turning complex problems into optimal decisions through scientific modeling, mathematical optimization, and tailored software.'
             }
         };
 
@@ -169,10 +169,53 @@
 
             if (!nombre || !email) return showNotification(ui().formRequired, 'error');
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showNotification(ui().formEmail, 'error');
+            if (fd.get('_honey')) return; // bot
 
-            showNotification(ui().formOk, 'success');
-            this.reset();
+            const form = this;
+            const btn = form.querySelector('.submit-btn');
+            const btnText = btn ? btn.textContent : '';
+            if (btn) { btn.disabled = true; btn.textContent = ui().formSending; }
+
+            fetch('https://formsubmit.co/ajax/contact@modelixsystems.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    nombre: nombre,
+                    empresa: (fd.get('empresa') || '').trim(),
+                    email: email,
+                    mensaje: (fd.get('mensaje') || '').trim(),
+                    _replyto: email,
+                    _subject: 'Nuevo contacto web: ' + nombre,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            })
+                .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+                .then(function(r) {
+                    if (!r.ok || String(r.data.success) !== 'true') throw new Error(r.data.message || 'error');
+                    showNotification(ui().formOk, 'success');
+                    form.reset();
+                })
+                .catch(function() { showNotification(ui().formError, 'error'); })
+                .finally(function() {
+                    if (btn) { btn.disabled = false; btn.textContent = btnText; }
+                });
         });
+    }
+
+    /* ======================================================
+       WhatsApp flotante
+       ====================================================== */
+    function initWhatsApp() {
+        const wa = document.querySelector('.whatsapp-float');
+        if (!wa) return;
+        const update = () => {
+            wa.href = 'https://wa.me/5491164064797?text=' + encodeURIComponent(ui().waMsg);
+            wa.setAttribute('aria-label', ui().waLabel);
+            wa.title = ui().waLabel;
+        };
+        update();
+        langListeners.push(update);
     }
 
     function showNotification(message, type) {
@@ -950,6 +993,7 @@
         initNavbarScroll();
         initMobileMenu();
         initContactForm();
+        initWhatsApp();
         initHeroFrameAnimation();
         initCtaFrameAnimation();
     }

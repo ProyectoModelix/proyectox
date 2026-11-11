@@ -174,7 +174,11 @@ window.OPTIMA_I18N = {
             nBaseShort: ' (faltarían {n} u.)',
             formRequired: 'Por favor completá los campos requeridos.',
             formEmail: 'Por favor ingresá un email válido.',
-            formOk: '¡Gracias por tu interés! Nos pondremos en contacto pronto.'
+            formOk: '¡Gracias por tu interés! Nos pondremos en contacto pronto.',
+            formSending: 'Enviando...',
+            formError: 'No pudimos enviar el mensaje. Probá de nuevo o escribinos a contact@modelixsystems.com.',
+            waMsg: '¡Hola! Me interesa conocer más sobre los servicios de Modelix Systems.',
+            waLabel: 'Escribinos por WhatsApp'
         },
         en: {
             months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -220,7 +224,11 @@ window.OPTIMA_I18N = {
             nBaseShort: ' ({n} u. short)',
             formRequired: 'Please fill in the required fields.',
             formEmail: 'Please enter a valid email.',
-            formOk: 'Thank you for your interest! We will be in touch soon.'
+            formOk: 'Thank you for your interest! We will be in touch soon.',
+            formSending: 'Sending...',
+            formError: 'We could not send your message. Please try again or email us at contact@modelixsystems.com.',
+            waMsg: "Hi! I'm interested in learning more about Modelix Systems' services.",
+            waLabel: 'Message us on WhatsApp'
         }
     }
 };

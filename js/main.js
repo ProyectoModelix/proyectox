@@ -176,8 +176,13 @@
             const btnText = btn ? btn.textContent : '';
             if (btn) { btn.disabled = true; btn.textContent = ui().formSending; }
 
+            // Corta la espera si el servicio no responde
+            const ctrl = window.AbortController ? new AbortController() : null;
+            const timer = ctrl ? setTimeout(function() { ctrl.abort(); }, 20000) : null;
+
             fetch('https://formsubmit.co/ajax/contact@modelixsystems.com', {
                 method: 'POST',
+                signal: ctrl ? ctrl.signal : undefined,
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify({
                     nombre: nombre,
@@ -198,6 +203,7 @@
                 })
                 .catch(function() { showNotification(ui().formError, 'error'); })
                 .finally(function() {
+                    if (timer) clearTimeout(timer);
                     if (btn) { btn.disabled = false; btn.textContent = btnText; }
                 });
         });

@@ -1,0 +1,54 @@
+# Modelix Systems
+
+> Modelix Systems es una consultora de optimización matemática y modelado científico. Un equipo interdisciplinario de matemáticos, físicos y desarrolladores de software diseña modelos a medida —desde cero, no software empaquetado— para resolver problemas de planificación, producción, inventarios y logística en la industria.
+
+- Sitio web: https://modelixsystems.com/
+- Email: contact@modelixsystems.com
+- Teléfono / WhatsApp: +54 9 11 6406-4797
+- Idiomas de atención: español e inglés
+
+## Soluciones
+
+### A. Planificación y optimización SIOP (S&OP)
+Optimizamos la planificación de la demanda, producción e inventarios para mejorar el cumplimiento de pedidos, utilizar eficientemente los recursos y reducir costos operativos.
+- Pronóstico de demanda: estimaciones más precisas y con menos sesgo.
+- Optimización del plan de producción: planes que cumplen la demanda en tiempo y cantidad respetando capacidades y restricciones operativas.
+- Cumplimiento de demanda: pedidos completos y dentro de los plazos comprometidos.
+- Optimización de inventarios: niveles adecuados para reducir costos, prevenir faltantes y garantizar disponibilidad.
+- Simulación de escenarios: cambios de demanda, capacidad, producción y abastecimiento antes de comprometer recursos.
+
+### B. Optimización logística y de rutas
+Mejoramos la distribución de productos, el uso de flotas y los costos de transporte, considerando restricciones reales de capacidad, tiempos y niveles de servicio.
+- Optimización de rutas (ruteo de vehículos) respetando ventanas de entrega.
+- Planificación de capacidad de flotas: asignación de vehículos, cargas y rutas.
+- Programación de entregas por ventanas horarias.
+- Reducción del costo por entrega sin afectar el nivel de servicio.
+- Simulación de escenarios: picos de demanda, disponibilidad de vehículos, interrupciones viales y cambios de ventanas de entrega.
+
+## Modalidades de implementación
+- Plataforma cloud con acceso remoto a datos, análisis y resultados.
+- Aplicación independiente que se ejecuta en la infraestructura del cliente.
+- Integración con sistemas existentes (por ejemplo, ERP) y flujos de trabajo del cliente.
+- Servicio gestionado: ejecutamos, monitoreamos y mantenemos la solución.
+
+## Tecnología
+- Optimización matemática: modelos con objetivos, restricciones y capacidades operativas, resueltos con algoritmos de optimización para encontrar la mejor solución posible.
+- Optimización basada en simulación: simulación y métodos de búsqueda para sistemas complejos donde los modelos analíticos tradicionales no alcanzan.
+
+## Proyectos seleccionados
+- Optimización agronómica con GIS: inteligencia geoespacial y optimización para agricultura de precisión, con decisiones diferenciadas por zona de cultivo.
+- Planificación detallada de producción: modelos de largo plazo con inventarios, capacidad y demanda; transformación de planes mensuales en cronogramas diarios ejecutables.
+- Optimización de rutas: modelos logísticos con tiempos de viaje, costos, capacidad de flota y ventanas de entrega.
+
+## Metodología
+1. Diagnóstico: datos históricos, objetivos, restricciones y línea de base.
+2. Datos: procesamiento, limpieza e integración en un flujo confiable.
+3. Modelo: modelo matemático o de simulación adaptado a la operación real.
+4. Validación: comparación contra datos históricos, indicadores y línea de base.
+5. Implementación: automatización completa, desde la extracción de datos hasta planes optimizados y reportes.
+
+## Experiencia
+El equipo reúne experiencia en proyectos tecnológicos, científicos y de análisis de datos con organizaciones de agricultura, finanzas, desarrollo internacional y servicios tecnológicos, entre ellas Bayer, FAO, Santander y Quiena Inversiones.
+
+## Contacto
+Para evaluar una oportunidad de optimización: contact@modelixsystems.com o WhatsApp +54 9 11 6406-4797.
